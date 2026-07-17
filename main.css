@@ -11,6 +11,9 @@ body {
     color: #e0e0e0; /* Açık renk metin */
     line-height: 1.6;
     font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Üst Panel (Header) */
@@ -31,32 +34,25 @@ header {
 }
 
 .logo {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     margin-left: 15px;
     display: flex;
     align-items: center;
+    letter-spacing: 1px;
 }
 
-.logo i {
+/* Tux Ikon Stilleri (Header & Menu) */
+.header-tux-icon {
+    height: 24px;
+    width: auto;
     margin-right: 8px;
-    font-size: 24px;
 }
 
-.header-right {
-    margin-left: auto;
-    font-size: 13px;
-}
-
-.header-right a {
-    color: #ddd;
-    text-decoration: none;
-    margin-left: 15px;
-}
-
-.header-right a:hover {
-    color: white;
-    text-decoration: underline;
+.menu-tux-icon {
+    height: 18px;
+    width: auto;
+    margin-right: 12px;
 }
 
 /* Menü Sistemi */
@@ -118,23 +114,17 @@ header {
 }
 
 .dropdown-item {
-    display: block;
-    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
     color: #ccc;
     text-decoration: none;
     border-bottom: 1px solid #3a3a3a;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .dropdown-item:last-child {
     border-bottom: none;
-}
-
-.dropdown-item i {
-    margin-right: 10px;
-    color: #aaa;
-    width: 16px;
-    text-align: center;
 }
 
 .dropdown-item:hover {
@@ -142,194 +132,85 @@ header {
     color: #fff;
 }
 
-/* Ana İçerik Alanı */
-.container {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.page-header {
-    margin-bottom: 20px;
-    padding-bottom: 9px;
-    border-bottom: 1px solid #eee;
-}
-
-.page-header h1 {
-    font-size: 24px;
-    font-weight: normal;
-    color: #333;
-}
-
-/* Klasik Bilgi Panelleri (Panels) */
-.panel-row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -10px;
-    margin-right: -10px;
-}
-
-.panel-col {
-    flex: 0 0 25%;
-    max-width: 25%;
-    padding: 0 10px;
-    margin-bottom: 20px;
-}
-
-@media (max-width: 992px) {
-    .panel-col { flex: 0 0 50%; max-width: 50%; }
-}
-@media (max-width: 768px) {
-    .panel-col { flex: 0 0 100%; max-width: 100%; }
-    .header-right { display: none; }
-}
-
-.panel {
-    background-color: #fff;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    box-shadow: 0 1px 1px rgba(0,0,0,.05);
-}
-
-.panel-default {
-    border-color: #ddd;
-}
-
-.panel-heading {
-    padding: 10px 15px;
-    border-bottom: 1px solid transparent;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    background-color: #f5f5f5;
-    border-color: #ddd;
-    color: #333;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.panel-body {
-    padding: 15px;
-    font-size: 24px;
-    text-align: center;
-}
-
-.panel-footer {
-    padding: 10px 15px;
-    background-color: #f5f5f5;
-    border-top: 1px solid #ddd;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-    font-size: 12px;
-    color: #777;
-    text-align: right;
-}
-
-/* Tablo Stilleri */
-.table-responsive {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 8px;
-    line-height: 1.42857143;
-    vertical-align: top;
-    border-top: 1px solid #ddd;
-    text-align: left;
-}
-
-th {
-    background-color: #f9f9f9;
-    border-bottom: 2px solid #ddd;
-    font-size: 13px;
-}
-
-td {
-    font-size: 13px;
-}
-
-tbody tr:nth-of-type(odd) {
-    background-color: #f9f9f9;
-}
-
-tbody tr:hover {
-    background-color: #f5f5f5;
-}
-
-/* Etiketler (Labels/Badges) */
-.label {
-    display: inline;
-    padding: .2em .6em .3em;
-    font-size: 75%;
-    font-weight: 700;
-    line-height: 1;
-    color: #fff;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: .25em;
-}
-.label-success { background-color: #5cb85c; }
-.label-danger { background-color: #d9534f; }
-.label-warning { background-color: #f0ad4e; }
-.label-info { background-color: #5bc0de; }
-
-/* Basit Butonlar */
-.btn {
-    display: inline-block;
-    padding: 6px 12px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    cursor: pointer;
-    border: 1px solid transparent;
-    border-radius: 4px;
-}
-.btn-primary {
-    color: #fff;
-    background-color: #337ab7;
-    border-color: #2e6da4;
-}
-.btn-primary:hover {
-    background-color: #286090;
-    border-color: #204d74;
-}
-
-/* Alert Box (Uyarı) */
-.alert {
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-}
-.alert-info {
-    color: #31708f;
-    background-color: #d9edf7;
-    border-color: #bce8f1;
-}
-
 /* Boş Sayfa Logo Ortalama Stilleri */
 .empty-content-area {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 50px); /* Üst panel boyunu (yaklaşık) tam ekrandan çıkarıyoruz */
+    flex: 1;
     background-color: #242424;
+    padding: 20px;
+}
+
+.center-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .giant-linux-logo {
-    font-size: 250px;
-    color: #eeeeee; /* Beyaza yakın logo */
+    width: 250px;
+    height: auto;
+    max-width: 80%; /* Mobil uyumluluk için */
+}
+
+.coming-soon-text {
+    color: #777;
+    font-weight: normal;
+    font-size: 28px;
+    margin-top: 20px;
+    letter-spacing: 1px;
+}
+
+/* Footer Stilleri */
+.site-footer {
+    background-color: #1a1a1a;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #333;
+    font-size: 13px;
+    color: #888;
+}
+
+.site-footer a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.site-footer a:hover {
+    color: #fff;
+}
+
+/* Mobil Uyumluluk (Responsive) */
+@media (max-width: 480px) {
+    header {
+        padding: 10px 15px;
+    }
+    
+    .logo {
+        font-size: 18px;
+    }
+
+    .giant-linux-logo {
+        width: 180px;
+    }
+
+    .coming-soon-text {
+        font-size: 22px;
+    }
+    
+    .dropdown-menu {
+        min-width: 200px;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
 }
